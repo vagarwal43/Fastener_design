@@ -35,8 +35,8 @@ if __name__ == '__main__':
     print(f"min pin diameter: {min_pin_diameter(100, 2, 250)} mm = 1.01 mm")
 
     available_diameters = [1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 12, 16, 20, 25]  # mm https://www.bonehamusa.com/wp-content/uploads/2017/10/Dowel-Pins-Metric-to-ASME.pdf
-    forces = list(range(100, 30000, 10))  # N
-    safety_factors = [1, 2, 3]
+    forces = list(range(100, 30000, 10))  # N   # TODO: potentially make the range exponential
+    safety_factors = [1, 2, 3]  # TODO: safety factors less than 1 as failure cases?
     yield_strengths = [415, 360, 215, 290, 275]  # MPa, 4140 alloy steel, 52100 alloy steel, 18-8 stainless steel, 316 stainless steel, 416 stainless steel https://www.mcmaster.com/products/pins/dowel-pins-2~/dowel-pins-1~~/
 
     # create the dataset based on a set of forces, safety factors, and yield strengths
