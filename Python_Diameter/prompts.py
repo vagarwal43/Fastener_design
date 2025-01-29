@@ -1,2 +1,2 @@
-test_prompt = 'Calculate the optimal minor and major diameter for a bolt given the following parameters: desired safety factor of 2.0, \
-    initial minor diameter of 9 mm, major diameter of 10 mm, joint constant of 0.25 N/mm, applied load of 5000 N, preload of 6000 N, and yield strength of 350 MPa'
+test_prompt = 'Calculate the optimal major diameter for a bolt given the following parameters: desired safety factor of 2.0, \
+ minor diameter of 9 mm, initial major diameter of 10 mm, joint constant of 0.25 N/mm, applied load of 5000 N, preload of 6000 N, pitch of 1.25 mm, and yield strength of 350 MPa'
