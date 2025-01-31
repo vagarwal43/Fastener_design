@@ -12,9 +12,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 llm = llama_cpp.Llama.from_pretrained(
-    repo_id="bartowski/Qwen2.5-7B-Instruct-GGUF",
-    filename="Qwen2.5-7B-Instruct-Q4_K_M.gguf",
-    n_ctx=4000,
+    repo_id="bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF",
+    filename="WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-IQ4_XS.gguf",
+    n_ctx=16000,
     n_gpu_layers = -1,
     device = device
 )
@@ -134,7 +134,9 @@ class FastenatingCalculator(transformers.Tool):
 
             # output = f"Code: Calculate Safety Factor\nResult: {sf:.2f}"
             # print(f"Output: {output}")
-            return sf
+            # higher_or_lower = "higher" if sf > desired_safety_factor else "lower"
+            return f"The factor of safety is {sf:.2f}."
+            # return sf
 
         except requests.RequestException as e:
             error_message = f"Error occurred while fetching data: {str(e)}"
@@ -165,7 +167,7 @@ def main():
         llm_engine = llm_engine,
         add_base_tools=False,
         verbose=2,
-        max_iterations = 50,
+        max_iterations = 20,
         system_prompt = sp.system_pr
     )
     # agent = transformers.ReactJsonAgent(
