@@ -179,7 +179,7 @@ def main():
     #     system_prompt = sp.system_pr
     # )
 
-    response = agent.run(prompts.test_prompt)
+    response = agent.run(prompts.test_4)
 
     # # Process the response
     # if "choices" in response and len(response["choices"]) > 0:
