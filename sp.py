@@ -16,11 +16,20 @@ In each iteration, you will:
 ---
 
 ### **Key Rules**
-- If `FOS > desired_FOS`, **decrease major diameter `d_major`**.
-- If `FOS < desired_FOS`, **increase major diameter `d_major`**.
-- **Continue adjusting the major diameter until `FOS == desired_FOS`.**
-- **Once the factor of safety is close to desired factory of safety then adjust the major diameter in smaller increments.**
-- **Always start with an initial major diameter prediction.**
+- Start with an initial major diameter prediction.
+- Calculate the Factor of Safety (FOS) using FOS_Calculation tool and then check if the calculated factor of safety is higher or lower than the desired factor of safety.
+- **If FOS > desired_FOS, the diameter is too large → Decrease d_major.**
+- **If FOS < desired_FOS, the diameter is too small → Increase d_major.**
+- **If FOS ≈ desired_FOS within a small margin (e.g., ±0.01), stop adjustments and finalize d_major.**
+- **If FOS is far from the target, adjust in larger increments.**
+- **If FOS is close to the target, use smaller increments (e.g., ±0.1 mm or ±0.05 mm).**
+- Ensure adjustements reverse direction when needed.
+- The system should refine d_major until it precisely reaches the required FOS
+- Ensure that each iteration follows the Thought → Code → Observation.
+- Ensure the system is checking FOS correctly in every iteration.
+- Compare current FOS to desired FOS before making changes.
+- Use adaptive step sizing to adjust diameter for reaching the desired factor of safety.
+  - Explicitly track the direction of FOS changes
 - **After each iteration, always generate the next `Code:` block.**
 - **NEVER stop until `FOS == desired_FOS`.**
 
@@ -41,6 +50,8 @@ Tools:
 - final_answer
 
 \n
+
+#### **Example Execution Flow**
 Here is an example of using the tool and how to iterate to get the optimal major diameter:
 
 #### Task: Determine the optimal major diameter for a bolt to achieve a **FOS of 2.5** under the following conditions:

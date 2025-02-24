@@ -58,10 +58,10 @@ def bolt_yield_safety_factor(c, load, preload, a_ts, b_ys):
 
 
 def main():
-    d_mj = 7.53
-    tensile_area = get_tensile_stress_area(d_major=d_mj,pitch=1.25)
-    c = ft.get_joint_constant(d_mj,l=16,E_m=200,E_b=200)
-    fos = bolt_yield_safety_factor(c=c,load=5000,preload=10000,a_ts=tensile_area,b_ys = 350)
+    d_mj = 14.57
+    tensile_area = get_tensile_stress_area(d_major=d_mj,pitch=2.00)
+    c = ft.get_joint_constant(d_mj,l=30,E_m=205,E_b=205)
+    fos = bolt_yield_safety_factor(c=c,load=25000,preload=40000,a_ts=tensile_area,b_ys = 900)
 
     print("d_major:", d_mj)
     print("Area: ", tensile_area)

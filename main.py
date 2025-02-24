@@ -16,7 +16,8 @@ llm = llama_cpp.Llama.from_pretrained(
     filename="WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-IQ4_XS.gguf",
     n_ctx=16000,
     n_gpu_layers = -1,
-    device = device
+    device = device,
+    use_mlock = True
 )
 
 def llm_engine(messages, stop_sequences = ["Task"]) -> str:
@@ -174,7 +175,7 @@ def main():
         llm_engine = llm_engine,
         add_base_tools=False,
         verbose=2,
-        max_iterations = 20,
+        max_iterations = 50,
         system_prompt = sp.system_pr
     )
     # agent = transformers.ReactJsonAgent(
@@ -186,19 +187,7 @@ def main():
     #     system_prompt = sp.system_pr
     # )
 
-    response = agent.run(prompts.test_0)
-
-    # # Process the response
-    # if "choices" in response and len(response["choices"]) > 0:
-    #     if "message" in response["choices"][0] and "content" in response["choices"][0]["message"]:
-    #         answer = response["choices"][0]["message"]["content"]
-    #     else:
-    #         # Handle the case where "message" or "content" is missing
-    #         answer = "Error: Incomplete response structure."
-    # else:
-    #     # Handle the case where the "choices" list is empty or missing
-    #     answer = "Error: No valid response received."
-
+    response = agent.run(prompts.test_4)
     print(response)
 
 if __name__ == "__main__":

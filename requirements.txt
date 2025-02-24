@@ -1,0 +1,6 @@
+!pip install transformers
+!CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python --verbose
+requests
+torch
+transformers
+llama_cpp
