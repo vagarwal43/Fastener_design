@@ -2,9 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Given data
-fos_values = np.array([1.0, 2.0, 2.5, 4.0, 5.0])  # Factor of Safety (x-axis)
+fos_values = np.array([f"Problem 1 \n FOS: 1.0", 
+                       f"Problem 2 \n FOS: 2.0", 
+                       f"Problem 3 \n FOS: 2.5", 
+                       f"Problem 4 \n FOS: 4.0", 
+                       f"Problem 5 \n FOS: 5.0"])  # Factor of Safety (x-axis)
 agent_diameters = np.array([8.625, 23.5, 10.5, 22, 16.6])  # Agent generated diameters (y-axis)
-calculated_diameters = np.array([8.6, 23.5, 10.8, 22.02, 16.6])  # Your calculated diameters (y-axis)
+calculated_diameters = np.array([8.6, 23.5, 10.45, 22.02, 16.6])  # Your calculated diameters (y-axis)
 
 # Compute the absolute difference for error bars
 diff = np.abs(agent_diameters - calculated_diameters)
@@ -16,8 +20,6 @@ plt.errorbar(fos_values, calculated_diameters, yerr=diff, fmt='s', capsize=5, co
 plt.plot(fos_values, agent_diameters, marker='o', linestyle='-', label='Agent Generated Diameter', color='blue')
 plt.plot(fos_values, calculated_diameters, marker='s', linestyle='--', label='Calculated Diameter', color='red')
 
-# Labels and title
-plt.xlabel('Factor of Safety')
 plt.ylabel('Diameter')
 plt.title('Comparison of Agent vs. Calculated Diameters (Error Bars)')
 
@@ -46,8 +48,7 @@ for i in range(len(fos_values)):
     diff_value = round(agent_diameters[i] - calculated_diameters[i], 3)
     plt.text(x_indices[i], max(agent_diameters[i], calculated_diameters[i]) + 0.5, f"Δ={diff_value}", ha='center', fontsize=10, fontweight='bold')
 
-# Labels and title
-plt.xlabel('Factor of Safety')
+
 plt.ylabel('Diameter')
 plt.title('Bar Chart Comparison of Diameters with Differences')
 plt.xticks(x_indices, fos_values)  # Set x-axis labels to fos_values
