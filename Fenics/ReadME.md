@@ -42,14 +42,14 @@ Make sure you have the following installed:
 # Inputs
 
 | Parameter | Type | Description |
-| ------------- | ------------- |
-| step_file  | str	Path to the STEP file containing the 3D geometry. |
-| E | float	Young's modulus of the material (in Pascals). |
-| nu | float	Poisson's ratio of the material. |
-| yield_stress | float	Yield stress of the material (in Pascals). |
-| left_wall_tag | int	Physical tag for the left wall boundary in the STEP file. |
-| right_wall_tag | int	Physical tag for the right wall boundary in the STEP file. |
-| traction_force | tuple (float)	Traction force vector applied to the right wall (in Pascals). |
+| ------------- | ------------- | ------------- |
+| step_file  | str |	Path to the STEP file containing the 3D geometry. |
+| E | float |	Young's modulus of the material (in Pascals). |
+| nu | float |	Poisson's ratio of the material. |
+| yield_stress | float |	Yield stress of the material (in Pascals). |
+| left_wall_tag | int |	Physical tag for the left wall boundary in the STEP file. |
+| right_wall_tag | int |	Physical tag for the right wall boundary in the STEP file. |
+| traction_force | tuple (float) |	Traction force vector applied to the right wall (in Pascals). |
 
 ---
 
