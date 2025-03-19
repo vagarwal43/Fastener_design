@@ -120,12 +120,12 @@ def calculate_fos(step_file, E, nu, yield_strength, left_wall_tag, right_wall_ta
     return FOS
 
 # Input parameters
-step_file = "/home/sriyan/plate2.step"
+step_file = "**ADD FILE PATH HERE**"
 E = 210e9  # Young's modulus (Pa) for steel
 nu = 0.3   # Poisson's ratio
 yield_strength = 200e6  # Yield stress for steel (Pa)
-left_wall_tag = 6  # Physical tag for the left wall
-right_wall_tag = 8  # Physical tag for the right wall
+left_wall_tag = **ADD SURFACE TAG NUMBER HERE**  # Physical tag for the left wall
+right_wall_tag = ** ADD SURFACE TAG NUMBER HERE**  # Physical tag for the right wall
 traction_force = (10e6, 0.0, 0.0)  # Traction force in x-direction (1 MPa)
 
 # Calculate FOS
