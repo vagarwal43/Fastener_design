@@ -126,12 +126,12 @@ def calculate_fos(step_file, E, nu, yield_strength, zero_disp_tags, traction_tag
     return FOS
 
 # Input parameters
-step_file = "/home/sriyan/Assem2.STEP"
+step_file = "**Add path to file here**"
 E = 210e9
 nu = 0.3
 yield_strength = 200e6
-zero_disp_tags = [1,2,3,4,11,12,13,14,15,16,17,18,25,26,27,28] 
-traction_tags = [10, 24]
+zero_disp_tags = [**Add surface tag numbers here for zero displacement**] 
+traction_tags = [**Add surface tag numbers here for traction force**]
 traction_values = [(1e6, 0, 0), (-1e6, 0, 0)]
 
 # Calculate FOS
